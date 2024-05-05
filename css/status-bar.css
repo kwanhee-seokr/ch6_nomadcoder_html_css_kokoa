@@ -1,0 +1,38 @@
+.status-bar {
+    /* 3개의 div (No service, 18:43, 100%(battery)) 를 in line 으로 배치 */
+    display: flex;
+    /* 3개의 div (No service, 18:43, 100%(battery)) 를 균등한 간격으로 배치*/
+    /*justify-content: space-between; */
+    /* 위의 space-between 으로 할 경우, 18:43 이 중앙이 아님, */
+    /* 1. css hack 사용*/
+    justify-content: center;
+    padding: 5px 3px;
+}
+
+/* 2. css hack 사용*/
+.status-bar__column {
+    width: 33%;
+}
+
+.status-bar__column:first-child span {
+    margin-right: 5px;
+}
+
+/* 3. css hack 사용*/
+.status-bar__column:nth-child(2) {
+    display: flex;
+    justify-content: center;
+}
+
+/* 4. css hack 사용*/
+.status-bar__column:last-child {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/*battery 아이콘과 bolt 아이콘 공간 벌리기*/
+
+.status-bar__column .fa-battery-full {
+  margin: 0px 3px;
+}
