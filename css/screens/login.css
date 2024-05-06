@@ -1,0 +1,71 @@
+.welcome-header {
+    margin: 90px 0px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome-header__title {
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+.welcome-header__text {
+    width: 60%;
+    opacity: 0.8;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 30px;
+}
+
+#login-form input {
+    border: none;
+    padding: 15px 0px;
+    font-size: 18px;
+    /* input 이 submit 이 아닐때만 적용하기 위해 아래 코드 삭제후 아래 input:not에 추가 */
+    /*border-bottom : 1px solid rgba(0, 0, 0, 0.2); */
+    margin-bottom: 25px;
+}
+
+/* Log in input 을 포커스할때 var(--yellow) 에 의해 색이 변경되는 상황 예외처리*/
+/* https://developer.mozilla.org/ko/docs/Web/CSS/:not */
+
+#login-form input:not([type="submit"]) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    transition: bordere-color 0.3s ease-in-out;
+}
+
+/* 가상 클래스 선택자(pseudo element) 인 placeholer 활용*/
+#login-form input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+/* form 태그내 input 태그 각각을 클릭할때 outline 이 생기지 않도록 처리 */
+/* reset.css 의 마지막 input:focus 참조 */
+
+/* 클래스 state*/
+/* input 을 포커스(클릭)했을때 color 변경, variables.css 의 yellow variable 활용*/
+#login-form input:focus {
+    /* border-color: rgba(0, 0, 0, 0.4); */
+    border-color:var(--yellow);
+}
+
+/* 특성 선택자 attribute selector, type="submit" */
+#login-form input[type="submit"] {
+    background-color:var(--yellow);
+    cursor: pointer; /* progress, not-allowed 등 많은 타입 제공*/
+    padding: 20px 0px;
+    border-radius: 5px;
+}
+
+#login-form a {
+    text-align: center;
+    text-decoration: none;
+    /* url 은 기본적으로 blue 색이 적용됨, default color 삭제 */
+    color: inherit; /* 부모로 부터 상속 */
+    font-size: 13px;
+}

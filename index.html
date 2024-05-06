@@ -47,9 +47,13 @@
       </p>
     </header>
 
-    <form id="login-form">
-      <input type="text" placeholder="Email or phone number" />
-      <input type="password" placeholder="password"/>
+    <!-- form 태그의 중요 속성 -->
+    <!-- 1. action(어떤 페이지로 data 를 보낼건지 지징) -->
+    <!-- 2. method(어떻게 보낼건지 지정), POST(백엔드 서버에 정보를 전송하는 방식) 와 -->
+    <!--    GET(보안에 취약, username, password 를 GET 으로 보내면 안되나 간혹 사용) -->
+    <form action="friends.html" method="get" id="login-form">
+      <input name="username" required type="text" placeholder="Email or phone number" />
+      <input name="password" type="password" placeholder="password"/>
       <input type="submit" value="Log in" />
       <!--<input type="submit" value="Sign Up" /> --> 
       <a href="#">Find KaKao Account or Password</a>
